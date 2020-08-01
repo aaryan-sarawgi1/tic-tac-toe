@@ -23,6 +23,7 @@ class Game():
 					print(cell+"|",end="")
 				else:
 					print(cell)
+	
 	def character_choice(self):
 		while(True):
 			choice=input("Enter your character choice(X/O)\n").upper()
@@ -46,7 +47,6 @@ class Game():
 				return i,j
 
 	def display_continue(self):
-		clear()
 		return input("DO YOU WANT TO CONTINUE?(Y/N)\n").upper()
 
 

@@ -25,8 +25,7 @@ while(True):
 		continue
 	else:
 		print("Thanks for playing the game!")
-		break
-
+	break
 
 
 
