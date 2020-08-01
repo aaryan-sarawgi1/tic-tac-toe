@@ -154,15 +154,37 @@ class Logic():
 			return False
 
 	def isEmptyCorners(self,flag):
+		side_cornerflag=True
 		if flag:
 			mid=self.n//2
 			if self.cells[mid][mid]=="  ":
 				return (mid,mid)
+			c=1
 			for i in [0,self.n-1]:
 				for j in[0,self.n-1]:
 					if self.cells[i][j]=="  ":
-						self.flag=False
-						return (i,j)
+						
+						if c==1 and (self.cells[0][1]==self.player1_choice+" " or self.cells[1][0]==self.player1_choice+" "):#for4corners  01 10
+							#print(self.cells,c,i,j)
+							return (i,j)
+						elif c==2 and (self.cells[0][self.n-2]==self.player1_choice+" " or self.cells[1][self.n-1]==self.player1_choice+" "): #01 12
+							print(self.cells,c,i,j)
+							return (i,j)
+						elif c==3 and (self.cells[self.n-2][0]==self.player1_choice+" " or self.cells[self.n-1][1]==self.player1_choice+" "):#10 21
+							#print(self.cells,c,i,j)
+							return (i,j)
+						elif c==4 and (self.cells[self.n-2][self.n-1]==self.player1_choice+" " or self.cells[self.n-2][self.n-1]==self.player1_choice+" "):#12 21
+							#print(self.cells,c,i,j)
+							return (i,j)
+						else:
+							side_cornerflag=False
+							j,k=(i,j)
+						
+					c+=1
+			if not side_cornerflag:
+				return (j,k)
+
+
 		return (-1,-1)
 					
 		

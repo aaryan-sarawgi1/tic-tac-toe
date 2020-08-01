@@ -15,7 +15,7 @@ class Game():
 		for i in range(self.n):
 			print("   |"*(self.n-1))
 	def display_cells(self,cells,turn):
-		clear()
+		#clear()
 		print(f"{turn:^}'s Turn\n")
 		for row in cells:
 			for i,cell in enumerate(row):

@@ -1,4 +1,4 @@
-def add():
- return -5-3
 
-print(add())
+x=4
+if x==choice+" "or 4
+	print(0)
